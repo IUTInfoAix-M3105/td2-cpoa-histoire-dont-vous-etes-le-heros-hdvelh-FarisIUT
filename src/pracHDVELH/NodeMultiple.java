@@ -16,7 +16,7 @@ public class NodeMultiple {
 	public static final String ERROR_MSG_INDEX_OUT_OF_RANGE = "Index out of range";
 	public static int NODE_MAX_ARITY = 10;
 	private NodeMultiple[] daughters;
-	private object Data;
+	private Object data;
 
 	/* Overridden methods */
 	@Override
@@ -28,7 +28,7 @@ public class NodeMultiple {
 			daughter[i].getData().toString();
 		}
 		return sb.toString();*/
-		return data.ToString();
+		return data.toString();
 	}
 
 	/* Getters/Setters */
@@ -41,8 +41,8 @@ public class NodeMultiple {
 	 * @return the {@code i}th daughter node, or {@code null} if it does not exist.
 	 */
 	public NodeMultiple getDaughter(int i) {
-		if {i < 0 || i > NODE_MAX_ARITY} {
-			return ErrorNaiveHandler.abort(ERROR_MSG_INDEX_OUT_OF_RANGE)+ " @ " + getClass() + ".getDaugters()");}
+		if (i < 0 || i > NODE_MAX_ARITY) {
+			ErrorNaiveHandler.abort(ERROR_MSG_INDEX_OUT_OF_RANGE + " @ " + getClass() + ".getDaugters()");}
 		return daughters[i];
 				
 	}
@@ -62,9 +62,10 @@ public class NodeMultiple {
 	 * @param i        the daughter node's index
 	 */
 	public void setDaughter(NodeMultiple daughters, int i) {
-		if {i < 0 || i > NODE_MAX_ARITY} {
-			ErrorNaiveHandler.abort(ERROR_MSG_INDEX_OUT_OF_RANGE)+ " @ " + getClass() + ".getDaugters()");}
-		daugters[i]=daugter;
+		if (i < 0 || i > NODE_MAX_ARITY) {
+			ErrorNaiveHandler.abort(ERROR_MSG_INDEX_OUT_OF_RANGE + " @ " + getClass() + ".getDaugters()");
+			daughters[i] = daughters;
+		}
 	}
 
 	/**
@@ -72,7 +73,8 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple[] getDaughters() {
 		data = null;
-		dautghters = new Object[NODE_MAX_ARITY]
+		return daughters = (NodeMultiple[]) new Object[NODE_MAX_ARITY];
+		
 	}
 	
 
@@ -81,7 +83,7 @@ public class NodeMultiple {
 	 */
 	public void setDaughters(NodeMultiple[] daughters) {
 		/* TO BE COMPLETED */
-		this.daughters=daugters
+		this.daughters = daughters;
 	}
 
 	/**
@@ -94,15 +96,14 @@ public class NodeMultiple {
 	 */
 	public void addDaughter(NodeMultiple daughter) {
 		/* TO BE COMPLETED */
-		if daughter == null) {return;}
+		if (daughter == null) {return;}
 		int i=0;
-		while {i < Daughters.length && daugter[i] != null) {
+		while (i < daughters.length && daughters[i] != null) {
 			i++;
 			if (i < daughters.length) { 
-				daugters[i] = daugter;
-				}
+				daughters[i] = daughter;
 			}
-			i++
+			i++;
 		}
 	}
 
@@ -111,15 +112,15 @@ public class NodeMultiple {
 	 */
 	public Object getData() {
 		/* TO BE COMPLETED */
-		return Data;
+		return data;
 	}
 
 	/**
 	 * @param data
 	 */
 	public void setData(Object data) {
-		/* TO BE COMPLETED */*
-		this.setData() = Data;
+		/* TO BE COMPLETED */
+		this.data = data;
 	}
 
 	/**
@@ -127,12 +128,12 @@ public class NodeMultiple {
 	 *         daughter node.
 	 */
 	public boolean hasDaughters() {
-		/* TO BE COMPLETED */
 		int i=0;
-		while i < Daughters.length && daugter[i] != null) {
-			i++
+		while (i < daughters.length && daughters[i] != null) {
+			i++;
 			
 		}
+		return false;
 	}
 	
 	/* Constructors */
@@ -151,10 +152,8 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple(Object data) {
 		this();
-		this.data = data:
+		this.data = data;
 		
 		/* TO BE COMPLETED */
 	}
 }
-
-// eof
