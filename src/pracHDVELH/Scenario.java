@@ -27,7 +27,16 @@ public class Scenario {
 		gui.outputln(nextStep.getData());
 		return MSG_FINALE;
 	}
-
+	 public int interpretAnswer() {
+		 if (playerAnswer == null) {
+			 ErrorNaiveHandler.abort("Wrong usage of interpretAnswer() with a null or a empty current answer");
+		 }
+		 while (playerAnswer.isEmpty() || !playerAnswer.matches("[0-9]") || !isInRange(Integer.parseInt(playerAnswer) - 1)) {
+			 gui.outpuln(WARNING_MSG_INTEGER_EXPECTED);
+			 gui.outputln(PROMPT_ANSWER);
+			 playerAnswer = reader.next();
+		 }
+	 }
 	/* MAIN */
 	public static void main(String[] args) {
 		Scenario scenario;
