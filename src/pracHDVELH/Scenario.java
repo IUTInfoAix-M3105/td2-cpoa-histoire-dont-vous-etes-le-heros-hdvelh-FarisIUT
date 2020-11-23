@@ -16,6 +16,17 @@ public class Scenario {
 	private GUIManager gui;
 
 	/* TO BE COMPLETED */
+	public String run() {
+		Event nextStep;
+		if ((nextStep = getHead() == nul) {
+			return MSG_EMPTY_SCENARIO;
+		}
+		while (!nextStep.IsFinal()) {
+			nextStep = nextSept.run();
+		}
+		gui.outputln(nextStep.getData());
+		return MSG_FINALE;
+	}
 
 	/* MAIN */
 	public static void main(String[] args) {
